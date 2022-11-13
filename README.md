@@ -39,6 +39,15 @@ WITH RECURSIVE name_chain(id, name, path) AS (
 
 # Решение:
 
+Загрузил проект с решением 2 задания в папку TestProjectAsuNeft
+
+![image](https://user-images.githubusercontent.com/71041667/201527874-e6325efe-6a26-4bc4-a2b4-4376e18cedb1.png)
+
+![image](https://user-images.githubusercontent.com/71041667/201527883-db4d3dbd-2d51-4154-988b-913c7464e924.png)
+
+![image](https://user-images.githubusercontent.com/71041667/201527891-89296bb4-5c7e-4aac-833f-26bd58ab56cf.png)
+
+![image](https://user-images.githubusercontent.com/71041667/201527907-06ef6b73-3e9a-4f91-8092-49abcd632bbd.png)
 
 
 # Результат:
