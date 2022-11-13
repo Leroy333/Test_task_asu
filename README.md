@@ -97,6 +97,8 @@ function getFiniteValue(obj) {
 }   
 console.log(ob);
  ```
- #Результат: 
- ![image](https://user-images.githubusercontent.com/71041667/201526899-862a04bb-1b24-4e98-ac16-a9e840f082de.png)
+ 
+#Результат: 
+
+![image](https://user-images.githubusercontent.com/71041667/201526899-862a04bb-1b24-4e98-ac16-a9e840f082de.png)
 
