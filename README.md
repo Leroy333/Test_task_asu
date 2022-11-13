@@ -39,7 +39,7 @@ WITH RECURSIVE name_chain(id, name, path) AS (
 
 # Решение:
 
-Загрузил проект с решением 2 задания в папку TestProjectAsuNeft
+Загрузил проект с решением 2ого задания в папку TestProjectAsuNeft
 
 Реализация интерфейса ITreeNode - 
 
