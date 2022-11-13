@@ -39,7 +39,11 @@ WITH RECURSIVE name_chain(id, name, path) AS (
 
 # Решение:
 
+
+
 # Результат:
+
+![image](https://user-images.githubusercontent.com/71041667/201527419-9932f248-f650-4370-a55d-5d5821aea9d1.png)
 
 3 задание. 
 
