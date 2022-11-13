@@ -1,6 +1,7 @@
 # Test_task_asu
-  1 задание. 
-  ![image](https://user-images.githubusercontent.com/71041667/201525984-5167036f-b9a9-499a-950e-8347a28165d9.png)
+  1 задание.
+  
+![image](https://user-images.githubusercontent.com/71041667/201525984-5167036f-b9a9-499a-950e-8347a28165d9.png)
 # Решение: 
 ```rb
 CREATE TABLE Users(
