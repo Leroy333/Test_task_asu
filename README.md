@@ -41,14 +41,99 @@ WITH RECURSIVE name_chain(id, name, path) AS (
 
 Загрузил проект с решением 2 задания в папку TestProjectAsuNeft
 
-![image](https://user-images.githubusercontent.com/71041667/201527874-e6325efe-6a26-4bc4-a2b4-4376e18cedb1.png)
+Реализация интерфейса ITreeNode - 
 
-![image](https://user-images.githubusercontent.com/71041667/201527883-db4d3dbd-2d51-4154-988b-913c7464e924.png)
+```rb
+namespace TestProjectAsuNeft.Interfaces;
 
-![image](https://user-images.githubusercontent.com/71041667/201527891-89296bb4-5c7e-4aac-833f-26bd58ab56cf.png)
+public interface ITreeNode
+{
+    int TypeObj { get; set; }
+    string NameObj { get; set; }
+    List<ITreeNode> Childs { get; set; }
+    bool HasThisChild(int typeobj, string nameobj);
+}
+```
 
-![image](https://user-images.githubusercontent.com/71041667/201527907-06ef6b73-3e9a-4f91-8092-49abcd632bbd.png)
+Реализация класса TreeNode - 
 
+```rb
+namespace TestProjectAsuNeft.Models;
+
+public class TreeNode : ITreeNode
+{
+    public int TypeObj { get; set ; }
+    public string NameObj { get ; set ; }
+    public List<ITreeNode> Childs { get; set; } = new();
+
+    public bool HasThisChild(int typeobj, string nameobj)
+    {
+        bool hasThisChild = false;
+
+        foreach (var item in Childs)
+            if (item.TypeObj == typeobj && item.NameObj== nameobj)
+                hasThisChild=true;
+
+        return hasThisChild;
+    }
+    public override string ToString()
+    {
+        return $"| Название - {NameObj,-10} | Тип - {TypeObj,-2} |";
+    }
+}
+```
+
+Результат вывода - 
+
+```rb
+TreeNode mainNode = new()
+{
+    NameObj = "Иван",
+    TypeObj = 0
+};
+TreeNode firstChildNode = new()
+{
+    NameObj = "Екатерина",
+    TypeObj = 1
+};
+TreeNode secondChildNode = new()
+{
+    NameObj = "Евгений",
+    TypeObj = 2
+};
+IList<TreeNode> treeNodes = new List<TreeNode>()
+{
+    mainNode, firstChildNode, secondChildNode
+};
+
+mainNode.Childs.Add(firstChildNode);
+mainNode.Childs.Add(secondChildNode);
+
+string separator = new string('-', 100);
+
+
+Console.WriteLine(separator);
+Console.WriteLine("Все объекты:");
+foreach (var item in treeNodes)
+    Console.WriteLine(item);
+Console.WriteLine(separator);
+
+Console.WriteLine($"Есть ли в объекте \"{mainNode.NameObj}\" " +
+    $"дочерний объект с названием \"{firstChildNode.NameObj}\" типом \"{firstChildNode.TypeObj}\" : " +
+    $"\"{mainNode.HasThisChild(firstChildNode.TypeObj, firstChildNode.NameObj)}\"");
+Console.WriteLine(separator);
+
+Console.WriteLine($"Есть ли в объекте \"{mainNode.NameObj}\" " +
+    $"дочерний объект с названием \"{secondChildNode.NameObj}\" типом \"{secondChildNode.TypeObj}\" : " +
+    $"\"{mainNode.HasThisChild(secondChildNode.TypeObj, secondChildNode.NameObj)}\"");
+Console.WriteLine(separator);
+
+Console.WriteLine($"Есть ли в объекте \"{mainNode.NameObj}\" " +
+    $"дочерний объект с названием \"{firstChildNode.NameObj}\" типом \"{secondChildNode.TypeObj}\" : " +
+    $"\"{mainNode.HasThisChild(secondChildNode.TypeObj, firstChildNode.NameObj)}\"");
+Console.WriteLine(separator);
+
+```
 
 # Результат:
 
