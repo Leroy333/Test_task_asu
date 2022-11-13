@@ -32,4 +32,71 @@ WITH RECURSIVE name_chain(id, name, path) AS (
 # Результат: 
 ![image](https://user-images.githubusercontent.com/71041667/201526130-e2c387ae-1f81-4a8b-9fbd-a898b0ed44c5.png)
 
+3 задание. 
+
+![image](https://user-images.githubusercontent.com/71041667/201526357-ec84d9e5-c516-402d-a537-8a8bd7a5c956.png)
+
+#Решение:
+
+```rb
+const a={
+    typeobj: 0,
+    nameobj: 'enterprise1',
+    childs:[{
+        typeobj: 500,
+                nameobj: 'nameobj1',
+                childs:[
+                    {
+                        typeobj: 2,
+                        nameobj: 'test',
+                        child: [
+                            {
+                                typeobj: 2,
+                                nameobj: 'test_2',
+                                child: [{
+                                    typeobj: 555,
+                                    nameobj: 'test_3',
+                                    child: [],
+                                } 
+                                ],
+                            }
+                        ],
+                    }
+                ]	
+        },
+        {
+        typeobj: 500,
+                nameobj: 'oilfield2',
+                childs:[]	
+        }
+    ]
+    }
+let ob = [];
+getFiniteValue(a);
+function getFiniteValue(obj) {
+    getProp(obj);
+    function getProp(o) {
+        for(var prop in o) {
+            if(typeof(o[prop]) === 'object') {
+                getProp(o[prop]);
+            } else {
+                if(prop === 'typeobj'){
+                    let obj = {'typeobj': o[prop], 'count': 1}
+                    let getProperty = ob.find(item => item.typeobj === o[prop])
+                    if(getProperty){
+                        let findIndex = ob.findIndex(item => item.typeobj === o[prop])
+                        ob[findIndex].count += 1;
+                    }
+                    else{
+                        ob.push(obj);
+                    } 
+                }
+            }
+        }
+    }
+}   
+console.log(ob);
+ ```
+ #Результат: 
+ ![image](https://user-images.githubusercontent.com/71041667/201526899-862a04bb-1b24-4e98-ac16-a9e840f082de.png)
 
