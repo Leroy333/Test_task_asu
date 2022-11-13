@@ -1,5 +1,6 @@
 # Test_task_asu
-  1 задание. ![image](https://user-images.githubusercontent.com/71041667/201525984-5167036f-b9a9-499a-950e-8347a28165d9.png)
+  1 задание. 
+  ![image](https://user-images.githubusercontent.com/71041667/201525984-5167036f-b9a9-499a-950e-8347a28165d9.png)
 # Решение: 
 ```rb
 CREATE TABLE Users(
@@ -27,6 +28,7 @@ WITH RECURSIVE name_chain(id, name, path) AS (
        SELECT * FROM name_chain;
  ```
  
-# Результат: ![image](https://user-images.githubusercontent.com/71041667/201526130-e2c387ae-1f81-4a8b-9fbd-a898b0ed44c5.png)
+# Результат: 
+![image](https://user-images.githubusercontent.com/71041667/201526130-e2c387ae-1f81-4a8b-9fbd-a898b0ed44c5.png)
 
 
