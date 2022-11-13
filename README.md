@@ -36,7 +36,7 @@ WITH RECURSIVE name_chain(id, name, path) AS (
 
 ![image](https://user-images.githubusercontent.com/71041667/201526357-ec84d9e5-c516-402d-a537-8a8bd7a5c956.png)
 
-#Решение:
+# Решение:
 
 ```rb
 const a={
@@ -98,7 +98,7 @@ function getFiniteValue(obj) {
 console.log(ob);
  ```
  
-#Результат: 
+# Результат: 
 
 ![image](https://user-images.githubusercontent.com/71041667/201526899-862a04bb-1b24-4e98-ac16-a9e840f082de.png)
 
